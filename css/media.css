@@ -1,0 +1,31 @@
+/* sm */
+@media (max-width: 576px) {
+}
+
+/* md */
+@media (max-width: 768px) {
+}
+@media (min-width: 768px) {
+  .logo {
+    padding: 12px;
+    box-shadow: 0px 3px 10px rgba(126, 35, 254, 0.5);
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-contnainer {
+    width: 90%;
+  }
+}
+
+/* lg */
+@media (max-width: 992px) {
+}
+
+/* xl */
+@media (max-width: 1200px) {
+}
+
+/* xxl */
+@media (max-width: 1400px) {
+}
