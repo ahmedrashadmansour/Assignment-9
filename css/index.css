@@ -98,9 +98,17 @@ img {
   --purple-bg-color: #7f22fe;
   --light-gray: #f9fafb;
   --bg-red: #fb194c;
+  --txt-red: #ec003f;
+  --bg-light-red: #ffe4e6;
+}
+.bg-light-red {
+  background-color: var(--bg-light-red);
 }
 .bg-red {
   background-color: var(--bg-red);
+}
+.txt-red {
+  color: var(--txt-red);
 }
 .contact-bg {
   background-color: var(--light-gray) !important;
@@ -108,6 +116,10 @@ img {
 .txt-green-color {
   color: var(--txt-green);
 }
+.txt-green-color {
+  color: var(--txt-green);
+}
+
 .bg-light-green {
   background-color: var(--bg-light-green);
 }
@@ -157,6 +169,10 @@ body {
 
 .bg-orange-gradient {
   background: linear-gradient(to right bottom, #fd9000 40%, #f65400);
+}
+
+.nav-item a:hover {
+  background-color: #e5e7eb;
 }
 /* =================== End Nav ================*/
 
@@ -208,8 +224,6 @@ body {
 .contact-controls {
   background-color: #fafbfc;
 }
-.intial-letters {
-}
 
 .contact-card {
   border-radius: 20px !important;
@@ -223,14 +237,14 @@ body {
 .fav-heading {
   background-color: #fff8ed;
 }
-.contact-wrapper .call-icon {
+.contact-fav-wrapper .call-icon {
   transition:
     background-color 0.3s,
     color 0.3s;
 }
 
-.contact-wrapper:hover {
-  background-color: #fffbeb;
+.contact-fav-wrapper:hover {
+  background-color: #fffbeb !important;
   .call-icon {
     color: white;
     background-color: #00bc7d;
@@ -240,4 +254,76 @@ body {
 .form-control {
   width: 98%;
 }
+
+.emergency-heading {
+  background-color: #fff2f2;
+}
+
+.contact-fav-wrapper .call-icon {
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.contact-emergncy-wrapper .call-icon {
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.contact-emergncy-wrapper:hover {
+  background-color: #fff2f2 !important;
+  .call-icon {
+    color: white;
+    background-color: var(--bg-red);
+  }
+}
+
+.name-gradient {
+  background: linear-gradient(to bottom right, #fd9300 50%, #f65700);
+}
+.txt-blue-with-bg-light {
+  color: #155dfc;
+  background-color: #dbeafe;
+}
+.text-purple-with-bg-light {
+  color: #7f22fe;
+  background-color: #f5f3ff;
+}
+.text-purple-with-bg-light:hover {
+  background-color: #ede9fe !important;
+}
+
+.is-emergency-pill {
+  color: var(--txt-red);
+  background-color: #fff1f2;
+  width: fit-content;
+  padding-inline: 10px;
+  padding-block: 0px;
+}
+
+.green-icon {
+  color: #009966;
+  background-color: #ecfdf5;
+}
+
+.green-icon:hover {
+  background-color: #d0fae5;
+}
+
+.yellow-icon {
+  color: #ffb900;
+  background-color: #fffbeb;
+}
+.yellow-icon:hover {
+  background-color: #fef3c6;
+}
+.red-icon {
+  color: #ff2056;
+  background-color: #fff1f2;
+}
+.red-icon:hover {
+  background-color: #ffe4e6;
+}
+
 /* =================== End Main Section ================*/

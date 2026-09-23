@@ -28,7 +28,7 @@
     2-Selct Elemnt
     3-Think Js
     -->
-    <nav class="navbar navbar-expand-md bg-body-tertiary shadow-sm">
+    <nav class="navbar navbar-expand-md bg-body-tertiary">
       <div class="container-fluid nav-contnainer flex-nowrap px-3 py-1">
         <div class="logo-and-title d-flex gap-3 align-items-center">
           <span class="logo text-center fs-5 text-white rounded-4 bg-gradient-purple shadow"><i class="fa-solid fa-address-book"></i></span>
@@ -54,12 +54,12 @@
                 <span> <i class="fa-solid fa-plus"></i></span>add<span class="contact-btn d-none d-md-block">contact</span>
               </button>
             </li>
-            <li class="nav-item d-flex align-items-center d-none d-md-block">
-              <a class="pe-1 fs-5 text-muted" href="#"><i class="fa-solid fa-bell"></i></a>
+            <li class="nav-item d-flex align-items-center d-none d-md-block justify-content-center">
+              <a class="pe-1 fs-5 text-muted rounded-2 flex-grow-1 p-2 ps-1" href="#"><i class="fa-solid fa-bell"></i></a>
               <!-- <a class="nav-link p-0" href="#recent">Recent</a> -->
             </li>
-            <li class="nav-item d-flex align-items-center d-none d-md-block">
-              <a class="pe-1 fs-5 text-muted" href="#"><i class="fa-solid fa-gear"></i></a>
+            <li class="nav-item d-flex align-items-center d-none d-md-block justify-content-center">
+              <a class="pe-1 fs-5 text-muted rounded-2 flex-grow-1 p-2 ps-1" href="#"><i class="fa-solid fa-gear"></i></a>
               <!-- <a class="nav-link p-0" href="#setting">Setting </a> -->
             </li>
             <li class="nav-item d-flex align-items-center">
@@ -115,65 +115,69 @@
           <div class="row g-3">
             <div class="col-12 col-xl-9">
               <div class="inner">
-                <div class="heading ps-1 py-3">
+                <div class="heading ps-2 pt-3">
                   <h2 class="fw-bold">All Contacts</h2>
                   <p class="font-14 text-muted">Manage and organize your 1 contacts</p>
                 </div>
 
-                <div class="position-relative mx-auto my-1 ps-1">
-                  <i class="fa-solid fa-magnifying-glass position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></i>
-                  <input
-                    type="search"
-                    class="form-control p-3 ps-5 pe-0 rounded-4"
-                    id="phoneSearch"
-                    oninput=""
-                    placeholder="Search by phone, name, or email..." />
+                <div class="input-search-wrapper px-1">
+                  <div class="position-relative mx-auto my-1 ps-1">
+                    <i class="fa-solid fa-magnifying-glass position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></i>
+                    <input
+                      type="search"
+                      class="form-control p-3 ps-5 rounded-4"
+                      id="phoneSearch"
+                      oninput=""
+                      placeholder="Search by phone, name, or email..." />
+                  </div>
                 </div>
+
                 <div class="contact">
                   <div class="container-fluid">
                     <div class="row">
                       <div class="col-12 col-md-6">
                         <div class="inner">
                           <div class="contact-card my-3 shadow-sm rounded-5 overflow-hidden">
-                            <div class="contact-info p-4 bg-white pb-0">
+                            <div class="contact-info p-3 bg-white pb-2">
                               <div class="contact-heading d-flex gap-3">
-                                <div class="intial-letters font-18 fw-semibold">
-                                  <span class="first-letter">A</span>
-                                  <span class="second-letter">R</span>
+                                <div class="intial-letters font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2">
+                                  <span class="first-letter">A<span class="second-letter">R</span></span>
                                 </div>
                                 <div class="name-number">
-                                  <h5 class="name text-capitalize m-0 fs-6 fw-semibold">Ahmed Rashad</h5>
-                                  <p>
-                                    <span><i class="fa-solid fa-phone"></i></span>
-                                    <span class="number"> 01022020202</span>
+                                  <h5 class="name text-capitalize m-0 fs-6 fw-semibold mb-2">Ahmed Rashad</h5>
+                                  <p class="d-flex gap-2 align-items-center">
+                                    <span class="p-1 txt-blue-with-bg-light rounded-2 font-11"><i class="fa-solid fa-phone"></i></span>
+                                    <span class="number font-14 text-muted"> 01022020202</span>
                                   </p>
                                 </div>
                               </div>
-                              <div class="email d-flex gap-2">
-                                <span><i class="fa-solid fa-envelope"></i></span>
-                                <p class="email">ahmedrashad384@gmail.com</p>
+                              <div class="email d-flex gap-2 align-items-center mb-2">
+                                <span class="text-purple-with-bg-light font-11 p-2 rounded-2 d-block"
+                                  ><i class="fa-solid fa-envelope"></i
+                                ></span>
+                                <p class="email text-muted font-14 m-0">ahmedrashad384@gmail.com</p>
                               </div>
-                              <div class="is-emergency-pill d-flex align-items-center">
+                              <div class="is-emergency-pill d-flex align-items-center font-11 rounded-3 mt-1">
                                 <span class="d-block p-2 ps-0 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
                                 <span>Emergency</span>
                               </div>
                             </div>
-                            <div class="contact-controls p-4 d-flex justify-content-between py-1">
+                            <div class="contact-controls py-2 px-3 d-flex justify-content-between font-14 rounded-2">
                               <div class="comunications d-flex gap-2 align-items-center">
-                                <div class="call">
+                                <a class="call green-icon font-14 p-2 rounded-2" href="#">
                                   <span><i class="fa-solid fa-phone"></i></span>
-                                </div>
-                                <div class="email">
+                                </a>
+                                <a href="#" class="email text-purple-with-bg-light font-14 p-2 rounded-2">
                                   <span><i class="fa-solid fa-envelope"></i></span>
-                                </div>
+                                </a>
                               </div>
                               <div class="contact-updates d-flex gap-2 align-items-center">
-                                <div class="add-favourite"><i class="fa-solid fa-star"></i></div>
-                                <div class="add-emergency">
-                                  <span class="d-block p-2 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
-                                </div>
-                                <div class="edit"><i class="fa-solid fa-pen"></i></div>
-                                <div class="delete"><i class="fa-solid fa-trash"></i></div>
+                                <a href="#" class="add-favourite yellow-icon font-14 p-2 rounded-2"><i class="fa-solid fa-star"></i></a>
+                                <a href="#" class="add-emergency">
+                                  <span class="d-block font-14 p-2 rounded-2 red-icon"><i class="fa-solid fa-heart-pulse"></i></span>
+                                </a>
+                                <a href="#" class="edit text-muted p-2"><i class="fa-solid fa-pen"></i></a>
+                                <a href="#" class="delete text-muted p-2"><i class="fa-solid fa-trash"></i></a>
                               </div>
                             </div>
                           </div>
@@ -182,45 +186,46 @@
                       <div class="col-12 col-md-6">
                         <div class="inner">
                           <div class="contact-card my-3 shadow-sm rounded-5 overflow-hidden">
-                            <div class="contact-info p-4 bg-white pb-0">
+                            <div class="contact-info p-3 bg-white pb-2">
                               <div class="contact-heading d-flex gap-3">
-                                <div class="intial-letters font-18 fw-semibold">
-                                  <span class="first-letter">A</span>
-                                  <span class="second-letter">R</span>
+                                <div class="intial-letters font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2">
+                                  <span class="first-letter">A<span class="second-letter">R</span></span>
                                 </div>
                                 <div class="name-number">
-                                  <h5 class="name text-capitalize m-0 fs-6 fw-semibold">Ahmed Rashad</h5>
-                                  <p>
-                                    <span><i class="fa-solid fa-phone"></i></span>
-                                    <span class="number"> 01022020202</span>
+                                  <h5 class="name text-capitalize m-0 fs-6 fw-semibold mb-2">Ahmed Rashad</h5>
+                                  <p class="d-flex gap-2 align-items-center">
+                                    <span class="p-1 txt-blue-with-bg-light rounded-2 font-11"><i class="fa-solid fa-phone"></i></span>
+                                    <span class="number font-14 text-muted"> 01022020202</span>
                                   </p>
                                 </div>
                               </div>
-                              <div class="email d-flex gap-2">
-                                <span><i class="fa-solid fa-envelope"></i></span>
-                                <p class="email">ahmedrashad384@gmail.com</p>
+                              <div class="email d-flex gap-2 align-items-center mb-2">
+                                <span class="text-purple-with-bg-light font-11 p-2 rounded-2 d-block"
+                                  ><i class="fa-solid fa-envelope"></i
+                                ></span>
+                                <p class="email text-muted font-14 m-0">ahmedrashad384@gmail.com</p>
                               </div>
-                              <div class="is-emergency-pill d-flex align-items-center">
+                              <div class="is-emergency-pill d-flex align-items-center font-11 rounded-3 mt-1">
                                 <span class="d-block p-2 ps-0 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
                                 <span>Emergency</span>
                               </div>
                             </div>
-                            <div class="contact-controls p-4 d-flex justify-content-between py-1">
+                            <div class="contact-controls py-2 px-3 d-flex justify-content-between font-14 rounded-2">
                               <div class="comunications d-flex gap-2 align-items-center">
-                                <div class="call">
+                                <a class="call green-icon font-14 p-2 rounded-2" href="#">
                                   <span><i class="fa-solid fa-phone"></i></span>
-                                </div>
-                                <div class="email">
+                                </a>
+                                <a href="#" class="email text-purple-with-bg-light font-14 p-2 rounded-2">
                                   <span><i class="fa-solid fa-envelope"></i></span>
-                                </div>
+                                </a>
                               </div>
                               <div class="contact-updates d-flex gap-2 align-items-center">
-                                <div class="add-favourite"><i class="fa-solid fa-star"></i></div>
-                                <div class="add-emergency">
-                                  <span class="d-block p-2 ps-0 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
-                                </div>
-                                <div class="edit"><i class="fa-solid fa-pen"></i></div>
-                                <div class="delete"><i class="fa-solid fa-trash"></i></div>
+                                <a href="#" class="add-favourite yellow-icon font-14 p-2 rounded-2"><i class="fa-solid fa-star"></i></a>
+                                <a href="#" class="add-emergency">
+                                  <span class="d-block font-14 p-2 rounded-2 red-icon"><i class="fa-solid fa-heart-pulse"></i></span>
+                                </a>
+                                <a href="#" class="edit text-muted p-2"><i class="fa-solid fa-pen"></i></a>
+                                <a href="#" class="delete text-muted p-2"><i class="fa-solid fa-trash"></i></a>
                               </div>
                             </div>
                           </div>
@@ -233,7 +238,8 @@
             </div>
             <div class="col-12 col-xl-3">
               <div class="inner">
-                <div class="favourite-list rounded-4 overflow-hidden mt-3">
+                <!-- favouurite -->
+                <div class="favourite-list rounded-4 overflow-hidden mt-3 shadow-sm">
                   <div class="fav-heading d-flex gap-1 p-3 align-items-center">
                     <span class="text-white star-gold-icon p-2 rounded-3"><i class="fa-solid fa-star"></i></span>
                     <div class="header p-2">
@@ -241,8 +247,8 @@
                       <p class="font-11 m-0 text-muted">Quick access to starred contacts</p>
                     </div>
                   </div>
-                  <div class="contact-fav-lst d-flex shadow-sm p-2 bg-white">
-                    <div class="contact-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-2 contact-bg rounded-3">
+                  <div class="contact-fav-lst d-flex shadow-sm p-3 bg-white">
+                    <div class="contact-fav-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-2 contact-bg rounded-3">
                       <div class="d-flex gap-3">
                         <div class="intial-letters font-18 fw-semibold bg-orange-gradient p-2 rounded-3">
                           <span class="first-letter text-white">A<span>R</span></span>
@@ -252,7 +258,7 @@
                           <p class="number m-0 font-12 text-muted">01022020202</p>
                         </div>
                       </div>
-                      <span class="call-icon d-block txt-green-color font-14 p-2 rounded-2 bg-light-green"
+                      <span class="call-icon d-block txt-green-color font-12 p-2 rounded-2 bg-light-green"
                         ><i class="fa-solid fa-phone"></i
                       ></span>
                     </div>
@@ -261,16 +267,17 @@
               </div>
               <!-- emergeny -->
               <div class="inner">
-                <div class="favourite-list rounded-4 overflow-hidden mt-3">
-                  <div class="fav-heading d-flex gap-1 p-3 align-items-center">
+                <div class="emergency-list rounded-4 overflow-hidden mt-4 shadow-sm">
+                  <div class="emergency-heading d-flex gap-1 p-3 align-items-center">
                     <span class="d-block p-2 text-white rounded-3 bg-red"><i class="fa-solid fa-heart-pulse"></i></span>
                     <div class="header p-2">
                       <h5 class="m-0 fs-6">Emergency</h5>
                       <p class="font-11 m-0 text-muted">Important contacts for urgent calls</p>
                     </div>
                   </div>
-                  <div class="contact-fav-lst d-flex shadow-sm p-2 bg-white">
-                    <div class="contact-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-2 contact-bg rounded-3">
+                  <div class="contact-emergency-lst d-flex shadow-sm p-2 bg-white">
+                    <div
+                      class="contact-emergncy-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-3 contact-bg rounded-3">
                       <div class="d-flex gap-3">
                         <div class="intial-letters font-18 fw-semibold bg-orange-gradient p-2 rounded-3">
                           <span class="first-letter text-white">A<span>R</span></span>
@@ -280,9 +287,7 @@
                           <p class="number m-0 font-12 text-muted">01022020202</p>
                         </div>
                       </div>
-                      <span class="call-icon d-block txt-green-color font-14 p-2 rounded-2 bg-light-green"
-                        ><i class="fa-solid fa-phone"></i
-                      ></span>
+                      <span class="call-icon d-block font-12 p-2 rounded-2 txt-red bg-light-red"><i class="fa-solid fa-phone"></i></span>
                     </div>
                   </div>
                 </div>
