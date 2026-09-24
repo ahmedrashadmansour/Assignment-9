@@ -128,14 +128,25 @@
                     <!-- Modal Footer -->
                     <div class="modal-footer d-flex justify-content-between">
                       <button type="button" class="btn flex-grow-1 flex-shrink-0 rounded-3 bg-light-gray" data-bs-dismiss="modal">
+                        <span> </span>
                         Cancel
                       </button>
                       <button
                         onclick="addNewContact()"
                         type="button"
+                        id="saveContact"
                         class="p-2 fw-semibold flex-grow-1 flex-shrink-0 rounded-3 purple-bg-color-no-hover text-white font-14">
                         <span><i class="fa-solid fa-check"></i></span>
                         Save Contact
+                      </button>
+                      <button
+                        onclick=""
+                        id="saveUpdate"
+                        type="button"
+                        ondblclick="updateThisContact()"
+                        class="p-2 fw-semibold flex-grow-1 flex-shrink-0 rounded-3 purple-bg-color-no-hover text-white font-14 d-none">
+                        <span><i class="fa-solid fa-check"></i></span>
+                        Update
                       </button>
                     </div>
                   </div>
@@ -152,7 +163,7 @@
               <!-- <a class="nav-link p-0" href="#setting">Setting </a> -->
             </li>
             <li class="nav-item d-flex align-items-center">
-              <div class="profile-img"><img src="imgs/avatar-4.jpg" alt=" profile image" class="w-100 rounded-4" /></div>
+              <div class="profile-img"><img src="imgs/4.jpg" alt=" profile image" class="w-100 rounded-4" /></div>
               <!-- <a class="nav-link p-0" href="#Profile">Profile </a> -->
             </li>
           </ul>
@@ -224,12 +235,14 @@
                 <div class="contact">
                   <div class="container-fluid">
                     <div class="row" id="addButnRowData">
+                      <!-- start contsct -->
                       <!-- <div class="col-12 col-md-6">
                         <div class="inner">
                           <div class="contact-card my-3 shadow-sm rounded-5 overflow-hidden">
                             <div class="contact-info p-3 bg-white pb-2">
                               <div class="contact-heading d-flex gap-3">
                                 <div class="intial-letters font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2">
+                                  <img src="imgs/avatar-4.jpg" alt="" />
                                   <span class="first-letter">A<span class="second-letter">R</span></span>
                                 </div>
                                 <div class="name-number">
@@ -274,6 +287,8 @@
                           </div>
                         </div>
                       </div> -->
+
+                      <!-- End contsct -->
                     </div>
                   </div>
                 </div>
