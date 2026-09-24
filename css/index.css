@@ -100,6 +100,13 @@ img {
   --bg-red: #fb194c;
   --txt-red: #ec003f;
   --bg-light-red: #ffe4e6;
+  --bg-light-gray: #f3f4f6;
+}
+.bg-light-gray {
+  background-color: var(--bg-light-gray);
+}
+.bg-light-gray:hover {
+  background-color: #e5e7eb;
 }
 .bg-light-red {
   background-color: var(--bg-light-red);
@@ -133,6 +140,9 @@ body {
   color: var(--purple-txt-color);
 }
 .purple-bg-color {
+  background-color: var(--purple-txt-color);
+}
+.purple-bg-color-no-hover {
   background-color: var(--purple-txt-color);
 }
 
@@ -192,7 +202,7 @@ body {
   box-shadow: 0px 5px 5px #ffe9c8;
   background: linear-gradient(to bottom right, #ffb100 50%, #ff7100);
 }
-.emergency span {
+.emergency span:not(:nth-last-child) {
   box-shadow: 0px 5px 5px #ffe9c8;
   background: linear-gradient(to bottom right, #fd1b50 50%, #e9001a);
 }
@@ -252,7 +262,7 @@ body {
 }
 
 .form-control {
-  width: 98%;
+  width: 99%;
 }
 
 .emergency-heading {
@@ -325,5 +335,61 @@ body {
 .red-icon:hover {
   background-color: #ffe4e6;
 }
+.contact-controls button {
+  border: none !important;
+  outline: none !important;
+}
+.edit,
+.delete {
+  background-color: inherit !important;
+}
 
+.modal-backdrop.show {
+  background-color: rgba(15, 23, 42, 0.5) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+  opacity: 1 !important;
+}
+
+.upload-Image-icon {
+  color: var(--bs-blue);
+  font-size: 5rem !important;
+}
+
+.change-photo {
+  background-color: #f3f4f6;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.change-photo:hover {
+  background-color: #e5e7eb;
+  /* cursor: pointer; */
+}
+
+input::placeholder {
+  color: #6c757d !important;
+  font-size: 14px;
+}
+.input-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+#addEmergency {
+  background-color: white !important;
+  color: red !important;
+}
+
+.addEmergency {
+  color: red !important;
+}
+.addFavourite {
+  color: #ffb900;
+}
+
+.modal-content {
+  max-height: 35rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
 /* =================== End Main Section ================*/
