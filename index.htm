@@ -111,14 +111,24 @@
                       </div>
                       <div class="fav-emergency pt-3 d-flex gap-5">
                         <div class="favourtite d-flex align-items-center gap-2">
-                          <input class="input-icon" type="checkbox" name="addFavourite" id="addFavourite" />
+                          <input
+                            class="input-icon"
+                            type="checkbox"
+                            name="addFavourite"
+                            id="addFavouriteCheckbox"
+                            oninput="addFavouriteContact()" />
                           <label for="addFavourite" class="d-flex gap-2 font-14"
-                            ><span><i class="fa-solid fa-star addFavourite"></i></span> Favourite</label
+                            ><span><i class="fa-solid fa-star addFavourite gold-color"></i></span>Favourite</label
                           >
                         </div>
                         <div class="emergency d-flex align-items-center gap-2">
-                          <input class="input-icon" type="checkbox" name="addEmergency" id="addEmergency" />
-                          <label for="addEmergency " class="d-flex gap-2 font-14"
+                          <input
+                            class="input-icon"
+                            type="checkbox"
+                            name="addEmergency"
+                            id="addEmergCheckbox"
+                            oninput="addEmergencyContact()" />
+                          <label for="addEmergency" class="d-flex gap-2 font-14"
                             ><span class="addEmergency"><i class="fa-solid fa-heart-pulse addEmergency"></i></span>Emergency</label
                           >
                         </div>
@@ -180,7 +190,7 @@
                   <span class="d-block p-2 users text-white rounded-3"><i class="fa-solid fa-users"></i></span>
                   <div>
                     <p class="heading m-0 text-uppercase text-opacity-75 font-12 fw-medium text-muted">Total</p>
-                    <p id="total-contacts" class="total-contacts m-0 fs-4 fw-bold"></p>
+                    <p id="total-contacts" class="total-contacts m-0 fs-4 fw-bold">0</p>
                   </div>
                 </div>
               </div>
@@ -192,7 +202,7 @@
                   <span class="d-block p-2 users text-white rounded-3"><i class="fa-solid fa-star"></i></span>
                   <div>
                     <p class="heading m-0 text-uppercase text-opacity-75 font-12 fw-medium text-muted">Favorites</p>
-                    <p class="total-contacts m-0 fs-4 fw-bold">1</p>
+                    <p class="total-favourite m-0 fs-4 fw-bold" id="totalFavourite">0</p>
                   </div>
                 </div>
               </div>
@@ -201,10 +211,10 @@
             <div class="col-6 col-lg-4">
               <div class="inner">
                 <div class="emergency d-flex gap-3 align-items-center bg-white p-3 rounded-4 shadow-sm h-100">
-                  <span class="d-block p-2 users text-white rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
+                  <span class="d-block p-2 emergency-icon text-white rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
                   <div>
                     <p class="heading m-0 text-uppercase text-opacity-75 font-12 fw-medium text-muted">emergency</p>
-                    <p class="total-contacts m-0 fs-4 fw-bold">1</p>
+                    <p class="total-contacts m-0 fs-4 fw-bold" id="totalEmergency">0</p>
                   </div>
                 </div>
               </div>
@@ -259,6 +269,12 @@
                                 ></span>
                                 <p class="email text-muted font-14 m-0" id="contactEmail">ahmedrashad384@gmail.com</p>
                               </div>
+                              <div class="address d-flex gap-2 align-items-center mb-2">
+                                <span class="address-icon text-purple-with-bg-light font-11 p-2 rounded-2 d-block"
+                                  ><i class="fa-solid fa-location-dot"></i>
+                                </span>
+                                <p class="email text-muted font-14 m-0" id="contactEmail">ahmedrashad384@gmail.com</p>
+                              </div>
                               <div class="is-emergency-pill d-flex align-items-center font-11 rounded-3 mt-1">
                                 <span class="d-block p-2 ps-0 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
                                 <span>Emergency</span>
@@ -305,21 +321,24 @@
                       <p class="font-11 m-0 text-muted">Quick access to starred contacts</p>
                     </div>
                   </div>
-                  <div class="contact-fav-lst d-flex shadow-sm p-3 bg-white">
-                    <div class="contact-fav-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-2 contact-bg rounded-3">
-                      <div class="d-flex gap-3">
-                        <div class="intial-letters font-18 fw-semibold bg-orange-gradient p-2 rounded-3">
-                          <span class="first-letter text-white">A<span>R</span></span>
+                  <div class="list-of-fav-contacts" id="favouriteList">
+                    <!-- <div class="contact-fav-lst d-flex shadow-sm p-3 bg-white">
+                      <div
+                        class="contact-fav-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-2 contact-bg rounded-3">
+                        <div class="d-flex gap-3">
+                          <div class="intial-letters font-18 fw-semibold bg-orange-gradient p-2 rounded-3">
+                            <span class="first-letter text-white">A<span>R</span></span>
+                          </div>
+                          <div class="contact-info">
+                            <p class="name m-0 font-14">Ahmed Rashad</p>
+                            <p class="number m-0 font-12 text-muted">01022020202</p>
+                          </div>
                         </div>
-                        <div class="contact-info">
-                          <p class="name m-0 font-14">Ahmed Rashad</p>
-                          <p class="number m-0 font-12 text-muted">01022020202</p>
-                        </div>
+                        <span class="call-icon d-block txt-green-color font-12 p-2 rounded-2 bg-light-green"
+                          ><i class="fa-solid fa-phone"></i
+                        ></span>
                       </div>
-                      <span class="call-icon d-block txt-green-color font-12 p-2 rounded-2 bg-light-green"
-                        ><i class="fa-solid fa-phone"></i
-                      ></span>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -333,20 +352,37 @@
                       <p class="font-11 m-0 text-muted">Important contacts for urgent calls</p>
                     </div>
                   </div>
-                  <div class="contact-emergency-lst d-flex shadow-sm p-2 bg-white">
-                    <div
-                      class="contact-emergncy-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-3 contact-bg rounded-3">
-                      <div class="d-flex gap-3">
-                        <div class="intial-letters font-18 fw-semibold bg-orange-gradient p-2 rounded-3">
-                          <span class="first-letter text-white">A<span>R</span></span>
+                  <div class="contact-emergency-lst" id="emergencyList">
+                    <!-- <div class="d-flex shadow-sm p-2 bg-white">
+                      <div
+                        class="contact-emergncy-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-3 contact-bg rounded-3">
+                        <div class="d-flex gap-3">
+                          <div class="intial-letters font-18 fw-semibold bg-orange-gradient p-2 rounded-3">
+                            <span class="first-letter text-white">A<span>R</span></span>
+                          </div>
+                          <div class="contact-info">
+                            <p class="name m-0 font-14">Ahmed Rashad</p>
+                            <p class="number m-0 font-12 text-muted">01022020202</p>
+                          </div>
                         </div>
-                        <div class="contact-info">
-                          <p class="name m-0 font-14">Ahmed Rashad</p>
-                          <p class="number m-0 font-12 text-muted">01022020202</p>
-                        </div>
+                        <span class="call-icon d-block font-12 p-2 rounded-2 txt-red bg-light-red"><i class="fa-solid fa-phone"></i></span>
                       </div>
-                      <span class="call-icon d-block font-12 p-2 rounded-2 txt-red bg-light-red"><i class="fa-solid fa-phone"></i></span>
                     </div>
+                    <div class="d-flex shadow-sm p-2 py-1 bg-white">
+                      <div
+                        class="contact-emergncy-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-3 contact-bg rounded-3">
+                        <div class="d-flex gap-3">
+                          <div class="intial-letters font-18 fw-semibold bg-orange-gradient p-2 rounded-3">
+                            <span class="first-letter text-white">A<span>R</span></span>
+                          </div>
+                          <div class="contact-info">
+                            <p class="name m-0 font-14">Ahmed Rashad</p>
+                            <p class="number m-0 font-12 text-muted">01022020202</p>
+                          </div>
+                        </div>
+                        <span class="call-icon d-block font-12 p-2 rounded-2 txt-red bg-light-red"><i class="fa-solid fa-phone"></i></span>
+                      </div>
+                    </div> -->
                   </div>
                 </div>
               </div>

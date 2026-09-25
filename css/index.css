@@ -202,7 +202,7 @@ body {
   box-shadow: 0px 5px 5px #ffe9c8;
   background: linear-gradient(to bottom right, #ffb100 50%, #ff7100);
 }
-.emergency span:not(:nth-last-child) {
+.emergency-icon {
   box-shadow: 0px 5px 5px #ffe9c8;
   background: linear-gradient(to bottom right, #fd1b50 50%, #e9001a);
 }
@@ -322,8 +322,8 @@ body {
 }
 
 .yellow-icon {
-  color: #ffb900;
-  background-color: #fffbeb;
+  color: #ffb900 !important;
+  background-color: #fffbeb !important;
 }
 .yellow-icon:hover {
   background-color: #fef3c6;
@@ -331,6 +331,10 @@ body {
 .red-icon {
   color: #ff2056;
   background-color: #fff1f2;
+}
+.redTotal {
+  color: white;
+  background-color: #ff2056;
 }
 .red-icon:hover {
   background-color: #ffe4e6;
@@ -380,10 +384,10 @@ input::placeholder {
   color: red !important;
 }
 
-.addEmergency {
+.red-icon {
   color: red !important;
 }
-.addFavourite {
+.gold-color {
   color: #ffb900;
 }
 
@@ -393,8 +397,13 @@ input::placeholder {
   scrollbar-width: none;
 }
 
+.address-icon {
+  color: #009966;
+  background-color: #d0fae5;
+}
+
 /* .intial-letters {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 } */
 /* =================== End Main Section ================*/

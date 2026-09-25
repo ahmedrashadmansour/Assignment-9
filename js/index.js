@@ -1,181 +1,3 @@
-// // function sayHello() {
-// //   console.log(document.getElementById("floatingInput").value);
-// // }
-// // var emailInput = document.getElementById("floatingInput");
-// // var passwordInput = document.getElementById("floatingPassword");
-
-// // function clearData() {
-// //   emailInput.value = "";
-
-// //   passwordInput.value = "";
-// // }
-// // function sayHello() {
-// //   // emailInput = null;
-// //   // passwordInput = null;
-// //   console.log(emailInput.value);
-// //   console.log(passwordInput.value);
-// // }
-
-// /*
-// Crud Operation
-
-// C => create
-// R => read | retrieve
-// u => Updade
-// D => Delete
-// S => search
-
-// */
-
-// // add New Product
-
-// var ProductName = document.getElementById("productName");
-// var productPrice = document.getElementById("productPrice");
-// var productImage = document.getElementById("productImage");
-// var productCategory = document.getElementById("productCategory");
-// var productDiscription = document.getElementById("productDiscription");
-// var rowData = document.getElementById("rowData");
-// var updateBtn = document.getElementById("updateBtn");
-// var addBtn = document.getElementById("addBtn");
-// var productList = (productList = JSON.parse(localStorage.getItem("products")) || []);
-
-// // var productList = JSON.parse(localStorage.getItem("products"));
-// displayAllProudct();
-// // console.log(productList);
-
-// /* any update in original array requires:
-//    1- store this upgate in local storeage
-//    2- display this update in UI
-// */
-
-// function addNewproduct() {
-//   var newProduct = {
-//     name: ProductName.value,
-//     price: productPrice.value,
-//     image: productImage.files[0] ? `imgs/${productImage.files[0].name}` : `imgs/2.jpg`,
-//     category: productCategory.value,
-//     discription: productDiscription.value,
-//   };
-
-//   productList.push(newProduct);
-//   localStorage.setItem("products", JSON.stringify(productList));
-//   displayAllProudct();
-//   clearForm();
-
-//   // console.log(productList);
-// }
-
-// function clearForm() {
-//   ProductName.value = "";
-//   productPrice.value = "";
-//   productImage.value = "";
-//   productCategory.value = "";
-//   productDiscription.value = "";
-// }
-
-// function displayAllProudct() {
-//   var box = "";
-//   for (var i = 0; i < productList.length; i++) {
-//     box += `<div class="col-4 mb-5">
-//           <div class="card">
-//             <img src="${productList[i].image}" class="card-img-top" alt="..." multiple />
-//             <div class="card-body">
-//               <h5 class="card-title">${productList[i].name}</h5>
-//               <p>${productList[i].price}</p>
-//               <h4>${productList[i].category}</h4>
-//               <p class="card-text">${productList[i].discription}</p>
-//               <div class="d-flex justify-content-between flex-row gap-2">
-//               <button class="btn  w-100 btn-danger " onclick="deleteThisProduct(${i})">Delete</button>
-//               <button class="btn  w-100 btn-warning" onclick="updateProduct(${i})">Update</button>
-//               </div>
-//             </div>
-//           </div></div>
-//           `;
-//   }
-//   rowData.innerHTML = box;
-// }
-
-// function deleteThisProduct(index) {
-//   productList.splice(index, 1);
-//   localStorage.setItem("products", JSON.stringify(productList));
-//   displayAllProudct();
-// }
-
-// var globalIndex;
-// function updateProduct(index) {
-//   globalIndex = index;
-//   showUpdateHideAdd();
-//   ProductName.value = productList[index].name;
-//   productPrice.value = productList[index].price;
-//   productCategory.value = productList[index].category;
-//   productDiscription.value = productList[index].discription;
-// }
-
-// function updateThisProduct() {
-//   // console.log("update this product ");
-
-//   var updatedProduct = {
-//     name: ProductName.value,
-//     price: productPrice.value,
-//     image: productImage.files[0] ? `imgs/${productImage.files[0].name}` : `imgs/2.jpg`,
-//     category: productCategory.value,
-//     discription: productDiscription.value,
-//   };
-
-//   productList[globalIndex] = updatedProduct;
-//   localStorage.setItem("products", JSON.stringify(productList));
-//   displayAllProudct();
-//   showAddHideUpdate();
-//   clearForm();
-// }
-
-// function showUpdateHideAdd() {
-//   updateBtn.classList.remove("d-none");
-//   addBtn.classList.add("d-none");
-// }
-// function showAddHideUpdate() {
-//   updateBtn.classList.add("d-none");
-//   addBtn.classList.remove("d-none");
-// }
-
-// function searchProduct(input) {
-//   // var productSearch = document.getElementById("productSearch");
-//   console.log(input.value);
-
-//   var box = "";
-//   for (var i = 0; i < productList.length; i++) {
-//     if (productList[i].name.toLowerCase().includes(input.value.toLowerCase())) {
-//       box += `<div class="col-4 mb-5">
-//           <div class="card">
-//             <img src="${productList[i].image}" class="card-img-top" alt="..." multiple />
-//             <div class="card-body">
-//               <h5 class="card-title">${productList[i].name}</h5>
-//               <p>${productList[i].price}</p>
-//               <h4>${productList[i].category}</h4>
-//               <p class="card-text">${productList[i].discription}</p>
-//               <div class="d-flex justify-content-between flex-row gap-2">
-//               <button class="btn  w-100 btn-danger " onclick="deleteThisProduct(${i})">Delete</button>
-//               <button class="btn  w-100 btn-warning" onclick="updateProduct(${i})">Update</button>
-//               </div>
-//             </div>
-//           </div></div>
-//           `;
-//     }
-//   }
-//   rowData.innerHTML = box;
-// }
-
-// var addContact = document.getElementById("addContact");
-// var addFavourite = document.getElementById("addFavourite");
-// var addEmergency = document.getElementById("addEmergency");
-// var callIcon = document.getElementById("callIcon");
-// var emailIcon = document.getElementById("emailIcon");
-// var editContact = document.getElementById("editContact");
-// var deleteContact = document.getElementById("deleteContact");
-// var contactName = document.getElementById("contactName");
-// var contactNumber = document.getElementById("contactNumber");
-// var contactEmail = document.getElementById("contactEmail");
-
 var contactImage = document.getElementById("photoInput");
 var fullName = document.getElementById("nameInput");
 var phoneNumber = document.getElementById("phoneInput");
@@ -189,13 +11,23 @@ var addTotalContactInHeader = document.getElementById("total-contacts");
 var imagePathOrIntials = document.getElementById("intialLetters ");
 var saveBtn = document.getElementById("saveContact");
 var updateBtn = document.getElementById("saveUpdate");
+var addFavourite = document.getElementById("addFavourite");
+var addEmergency = document.getElementById("addEmergency");
+var favouriteList = document.getElementById("favouriteList");
+var addFavouriteContactInHeader = document.getElementById("totalFavourite");
+var contactAdress = document.getElementById("Contactaddress");
+
+var emergencyList = document.getElementById("emergencyList");
+var addEmergecnyContactInHeader = document.getElementById("totalEmergency");
 
 var contactList = JSON.parse(localStorage.getItem("Contacts")) || [];
 displayContactList();
-
-//
+displayFavourite();
+displayEmergency();
 
 function addNewContact() {
+  var isFavCheckbox = document.getElementById("addFavouriteCheckbox");
+  var isEmergCheckbox = document.getElementById("addEmergCheckbox");
   var newContact = {
     // image: contactImage.files[0]
     //   ? `imgs/${contactImage.files[0].name}`
@@ -204,17 +36,30 @@ function addNewContact() {
     number: phoneNumber.value,
     email: emailAddress.value,
     adress: adress.value,
-    adress: adress.value,
     contactGroup: contactGroup.value,
     notes: notes.value,
+    isFavorite: isFavCheckbox ? isFavCheckbox.checked : false,
+    isEmergency: isEmergCheckbox ? isEmergCheckbox.checked : false,
   };
+
+  //adding intaal letters
+  // var separeteNames = [];
+  // var fullContactName = newContact?.name || "";
+  // if (fullContactName.trim() !== "") {
+  //   separeteNames.push(...fullContactName.split(" "));
+  // }
+  // console.log(separeteNames[0]?.[0] || "No Initial");
+  // console.log(separeteNames[1]?.[0] || "No Initial");
+  // fullContactName.push(newContact.name);
+  // var separeteNames = [fullContactName];
 
   contactList.push(newContact);
   localStorage.setItem("Contacts", JSON.stringify(contactList));
   displayContactList();
 
+  displayFavourite();
+  displayEmergency();
   clearAllInputs();
-  console.log(contactList);
 
   // to close button after adding contactts
   if (document.activeElement) {
@@ -237,13 +82,36 @@ function clearAllInputs() {
   adress.value = "";
   contactGroup.value = "";
   notes.value = "";
+
+  var isFavCheckbox = document.getElementById("addFavouriteCheckbox");
+  var isEmergCheckbox = document.getElementById("addEmergCheckbox");
+  if (isFavCheckbox) isFavCheckbox.checked = false;
+  if (isEmergCheckbox) isEmergCheckbox.checked = false;
+}
+
+//adding intaal letters
+function getInitials(name) {
+  if (!name || name.trim() === "") return "";
+
+  var parts = name.trim().split(" ").filter(Boolean);
+  var firstInitial = parts[0][0].toUpperCase();
+
+  if (parts.length > 1) {
+    var lastInitial = parts[parts.length - 1][0].toUpperCase();
+    return firstInitial + lastInitial;
+  }
+
+  return firstInitial;
 }
 
 function displayContactList() {
   var box = "";
-  // totalNumberOfContacts++;
 
   for (var i = 0; i < contactList.length; i++) {
+    var emergencyPillClass = contactList[i].isEmergency ? "" : "d-none";
+    var starClass = contactList[i].isFavorite ? "yellow-icon" : "text-muted";
+    var heartClass = contactList[i].isEmergency ? "red-icon" : "text-muted";
+    var initials = getInitials(contactList[i].name);
     box += `<div class="col-12 col-md-6">
                         <div class="inner">
                           <div class="contact-card my-3 shadow-sm rounded-5 overflow-hidden">
@@ -251,7 +119,7 @@ function displayContactList() {
                               <div class="contact-heading d-flex gap-3">
                                 <div class="intial-letters font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2" id="intialLetters">
                                   <!-- <img src="${contactList[i].image}" alt=""  class="z-3 w-100 h-100"/> -->
-                                 <span class="first-letter">A<span class="second-letter">R</span></span>   
+                                 <span class="first-letter">${initials}</span></span>   
                                 </div>
                                 <div class="name-number">
                                   <h5 class="name text-capitalize m-0 fs-6 fw-semibold mb-2" id="contactName">${contactList[i].name}</h5>
@@ -267,7 +135,13 @@ function displayContactList() {
                                 ></span>
                                 <p class="email text-muted font-14 m-0" id="contactEmail" >${contactList[i].email}</p>
                               </div>
-                              <div class="is-emergency-pill d-flex align-items-center font-11 rounded-3 mt-1">
+                               <div class="address d-flex gap-2 align-items-center mb-2">
+                                <span class="address-icon text-purple-with-bg-light font-11 p-2 rounded-2 d-block"
+                                  ><i class="fa-solid fa-location-dot"></i>
+                                </span>
+                                <p class="address-icon text-muted font-14 m-0" id="Contactaddress">${contactList[i].adress}</p>
+                              </div>
+                              <div class="is-emergency-pill d-flex align-items-center font-11 rounded-3 mt-1 ${emergencyPillClass}">
                                 <span class="d-block p-2 ps-0 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
                                 <span>Emergency</span>
                               </div>
@@ -282,11 +156,11 @@ function displayContactList() {
                                 </a>
                               </div>
                               <div class="contact-updates d-flex gap-2 align-items-center">
-                                <button id="addFavourite" class="add-favourite yellow-icon font-14 p-2 rounded-2">
+                                <button id="addFavourite" class="add-favourite ${starClass}  font-14 p-2 rounded-2" onclick="addFavouriteContact(this,${i})">
                                   <i class="fa-solid fa-star"></i>
                                 </button>
-                                <button class="add-emergency rounded-2" id="addEmergency">
-                                  <span class="d-block font-14 p-2 rounded-2 red-icon"><i class="fa-solid fa-heart-pulse"></i></span>
+                                <button class="add-emergency rounded-2 " id="addEmergency" onclick="addEmergencyContact(this,${i})">
+                                  <span class="d-block font-14 p-2 rounded-2 ${heartClass}"><i class="fa-solid fa-heart-pulse"></i></span>
                                 </button>
                                    <!-- delete and update buttons -->
                                 <button onclick="editContact (${i})" class="edit text-muted p-2" id="editContact"><i class="fa-solid fa-pen"></i></button>
@@ -307,7 +181,8 @@ function deleteThisContact(index) {
   contactList.splice(index, 1);
   localStorage.setItem("Contacts", JSON.stringify(contactList));
   displayContactList();
-  // console.log(index);
+  displayFavourite();
+  displayEmergency();
 }
 var globalIndex = 0;
 function editContact(index) {
@@ -316,7 +191,7 @@ function editContact(index) {
   fullName.value = contactList[index].name;
   phoneNumber.value = contactList[index].number;
   emailAddress.value = contactList[index].email;
-  adress.value = contactList[index].adress;
+  adress.value = contactList[index].adress || "";
   contactGroup.value = contactList[index].contactGroup;
   notes.value = contactList[index].notes;
 
@@ -334,9 +209,10 @@ function updateThisContact() {
     number: phoneNumber.value,
     email: emailAddress.value,
     adress: adress.value,
-    adress: adress.value,
     contactGroup: contactGroup.value,
     notes: notes.value,
+    isFavorite: contactList[globalIndex].isFavorite,
+    isEmergency: contactList[globalIndex].isEmergency,
   };
   contactList[globalIndex] = updatedContact;
 
@@ -344,6 +220,109 @@ function updateThisContact() {
   localStorage.setItem("Contacts", JSON.stringify(contactList));
   displayContactList();
   showSaveHideUpdateBtn();
+
+  // to close button after adding contactts
+  if (document.activeElement) {
+    document.activeElement.blur();
+  }
+
+  // Hide the Bootstrap modal
+  var modalElement = document.getElementById("addContactModal");
+  var modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (modalInstance) {
+    modalInstance.hide();
+  }
+}
+
+function addFavouriteContact(buttonElement, index) {
+  // contactList[index].isFavorite = !contactList[index].isFavorite;
+  // if (contactList[index].isFavorite) {
+  //   buttonElement.classList.add("yellow-icon");
+  // } else {
+  //   buttonElement.classList.remove("yellow-icon");
+  // }
+  contactList[index].isFavorite = !contactList[index].isFavorite;
+  localStorage.setItem("Contacts", JSON.stringify(contactList));
+  displayContactList();
+  displayFavourite();
+}
+
+function displayFavourite() {
+  var box = "";
+
+  for (var i = 0; i < contactList.length; i++) {
+    if (contactList[i].isFavorite === true) {
+      box += `<div class="contact-fav-lst d-flex shadow-sm p-3 py-1 bg-white">
+              <div class="contact-fav-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-2 contact-bg rounded-3">
+                <div class="d-flex gap-3">
+                  <div class="intial-letters font-18 fw-semibold bg-orange-gradient p-2 rounded-3">
+                    <span class="first-letter text-white">${getInitials(contactList[i].name)}</span>
+                  </div>
+                  <div class="contact-info">
+                    <p class="name m-0 font-14">${contactList[i].name}</p>
+                    <p class="number m-0 font-12 text-muted">${contactList[i].number}</p>
+                  </div>
+                </div>
+                <span class="call-icon d-block txt-green-color font-12 p-2 rounded-2 bg-light-green"
+                  ><i class="fa-solid fa-phone"></i
+                ></span>
+              </div>
+           </div>`;
+    }
+  }
+  addFavouriteContactInHeader.innerHTML = `${contactList.filter((c) => c.isFavorite).length}`;
+  favouriteList.innerHTML = box;
+
+  // to close button after adding contactts
+  if (document.activeElement) {
+    document.activeElement.blur();
+  }
+
+  // Hide the Bootstrap modal
+  var modalElement = document.getElementById("addContactModal");
+  var modalInstance = bootstrap.Modal.getInstance(modalElement);
+  if (modalInstance) {
+    modalInstance.hide();
+  }
+}
+
+function addEmergencyContact(buttonElement, index) {
+  // contactList[index].isEmergency = !contactList[index].isEmergency;
+  // if (contactList[index].isEmergency) {
+  //   buttonElement.classList.add("red-icon");
+  // } else {
+  //   buttonElement.classList.remove("red-icon");
+  // }
+  contactList[index].isEmergency = !contactList[index].isEmergency;
+  localStorage.setItem("Contacts", JSON.stringify(contactList));
+  displayContactList();
+  displayEmergency();
+}
+
+function displayEmergency() {
+  var box = "";
+
+  for (var i = 0; i < contactList.length; i++) {
+    if (contactList[i].isEmergency === true) {
+      box += `      <div class="d-flex shadow-sm p-2 bg-white">
+                      <div
+                        class="contact-emergncy-wrapper d-flex justify-content-between align-items-center flex-grow-1 p-3 contact-bg rounded-3">
+                        <div class="d-flex gap-3">
+                          <div class="intial-letters font-18 fw-semibold bg-orange-gradient p-2 rounded-3">
+                            <span class="first-letter text-white">${getInitials(contactList[i].name)}</span>
+                          </div>
+                          <div class="contact-info">
+                            <p class="name m-0 font-14">${contactList[i].name}</p>
+                            <p class="number m-0 font-12 text-muted">${contactList[i].number}</p>
+                          </div>
+                        </div>
+                        <span class="call-icon d-block font-12 p-2 rounded-2 txt-red bg-light-red"><i class="fa-solid fa-phone"></i></span>
+                      </div>
+                    </div>`;
+    }
+  }
+  addEmergecnyContactInHeader.innerHTML = `${contactList.filter((c) => c.isEmergency).length}`;
+  emergencyList.innerHTML = box;
 
   // to close button after adding contactts
   if (document.activeElement) {
@@ -369,7 +348,6 @@ function showSaveHideUpdateBtn() {
 
 function searchContact(input) {
   // var input = document.getElementById("contactSearch");
-  console.log(input.value);
 
   var box = "";
 
