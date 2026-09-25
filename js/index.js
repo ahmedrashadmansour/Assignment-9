@@ -366,7 +366,12 @@ function searchContact(input) {
   var box = "";
 
   for (var i = 0; i < contactList.length; i++) {
-    if (contactList[i].name.toLowerCase().includes(input.value.toLowerCase())) {
+    if (
+      contactList[i].name.toLowerCase().includes(input.value.toLowerCase()) ||
+      contactList[i].adress.toLowerCase().includes(input.value.toLowerCase()) ||
+      contactList[i].email.toLowerCase().includes(input.value.toLowerCase()) ||
+      contactList[i].number.toLowerCase().includes(input.value.toLowerCase())
+    ) {
       box += `<div class="col-12 col-md-6">
                         <div class="inner">
                           <div class="contact-card my-3 shadow-sm rounded-5 overflow-hidden">
