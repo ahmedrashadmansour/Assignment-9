@@ -251,10 +251,15 @@
                           <div class="contact-card my-3 shadow-sm rounded-5 overflow-hidden">
                             <div class="contact-info p-3 bg-white pb-2">
                               <div class="contact-heading d-flex gap-3">
-                                <div class="intial-letters font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2">
+                                
+                                <div
+                                  class="intial-letters font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2 position-relative">
+                                  <span class="favourite-small-icon position-absolute p-2"><i class="fa-solid fa-star"></i></span>
                                   <img src="imgs/avatar-4.jpg" alt="" />
                                   <span class="first-letter">A<span class="second-letter">R</span></span>
+                                  <span class="emergency-small-icon position-absolute p-2"><i class="fa-solid fa-heart-pulse"></i></span>
                                 </div>
+                               
                                 <div class="name-number">
                                   <h5 class="name text-capitalize m-0 fs-6 fw-semibold mb-2" id="contactName">Ahmed Rashad</h5>
                                   <p class="d-flex gap-2 align-items-center">
@@ -275,9 +280,14 @@
                                 </span>
                                 <p class="email text-muted font-14 m-0" id="contactEmail">ahmedrashad384@gmail.com</p>
                               </div>
-                              <div class="is-emergency-pill d-flex align-items-center font-11 rounded-3 mt-1">
-                                <span class="d-block p-2 ps-0 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
-                                <span>Emergency</span>
+                              <div class="group-and-emergency d-flex gap-2">
+                                <div class="contactGroup d-flex align-items-center font-11 rounded-3 mt-1 justify-content-center">
+                                  <span class="p-2 text-center rounded-2 d-flex">contact-group</span>
+                                </div>
+                                <div class="is-emergency-pill d-flex align-items-center font-11 rounded-3 mt-1">
+                                  <span class="d-block p-2 ps-0 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
+                                  <span>Emergency</span>
+                                </div>
                               </div>
                             </div>
                             <div class="contact-controls py-2 px-3 d-flex justify-content-between font-14 rounded-2">
@@ -302,7 +312,8 @@
                             </div>
                           </div>
                         </div>
-                      </div> -->
+                      </div> 
+                            -->
 
                       <!-- End contsct -->
                     </div>
@@ -314,8 +325,8 @@
               <div class="inner">
                 <!-- favouurite -->
                 <div class="favourite-list rounded-4 overflow-hidden mt-3 shadow-sm">
-                  <div class="fav-heading d-flex gap-1 p-3 align-items-center">
-                    <span class="text-white star-gold-icon p-2 rounded-3"><i class="fa-solid fa-star"></i></span>
+                  <div class="fav-heading d-flex gap-3 p-3 align-items-center">
+                    <span class="text-white star-gold-icon p-2 rounded-3 ms-2"><i class="fa-solid fa-star"></i></span>
                     <div class="header p-2">
                       <h5 class="m-0 fs-6">Favorites</h5>
                       <p class="font-11 m-0 text-muted">Quick access to starred contacts</p>
@@ -345,8 +356,8 @@
               <!-- emergeny -->
               <div class="inner">
                 <div class="emergency-list rounded-4 overflow-hidden mt-4 shadow-sm">
-                  <div class="emergency-heading d-flex gap-1 p-3 align-items-center">
-                    <span class="d-block p-2 text-white rounded-3 bg-red"><i class="fa-solid fa-heart-pulse"></i></span>
+                  <div class="emergency-heading d-flex gap-1 p-3 align-items-center gap-2">
+                    <span class="d-block p-2 text-white rounded-3 bg-red ms-2"> <i class="fa-solid fa-heart-pulse"></i></span>
                     <div class="header p-2">
                       <h5 class="m-0 fs-6">Emergency</h5>
                       <p class="font-11 m-0 text-muted">Important contacts for urgent calls</p>

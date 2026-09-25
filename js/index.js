@@ -117,9 +117,11 @@ function displayContactList() {
                           <div class="contact-card my-3 shadow-sm rounded-5 overflow-hidden">
                             <div class="contact-info p-3 bg-white pb-2">
                               <div class="contact-heading d-flex gap-3">
-                                <div class="intial-letters font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2" id="intialLetters">
+                                <div class="intial-letters-main font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2" id="intialLetters">
+                                 <span class="favourite-small-icon position-absolute p-2"><i class="fa-solid fa-star"></i></span>
                                   <!-- <img src="${contactList[i].image}" alt=""  class="z-3 w-100 h-100"/> -->
                                  <span class="first-letter">${initials}</span></span>   
+                                  <span class="emergency-small-icon position-absolute p-2"><i class="fa-solid fa-heart-pulse"></i></span>
                                 </div>
                                 <div class="name-number">
                                   <h5 class="name text-capitalize m-0 fs-6 fw-semibold mb-2" id="contactName">${contactList[i].name}</h5>
@@ -139,12 +141,18 @@ function displayContactList() {
                                 <span class="address-icon text-purple-with-bg-light font-11 p-2 rounded-2 d-block"
                                   ><i class="fa-solid fa-location-dot"></i>
                                 </span>
-                                <p class="address-icon text-muted font-14 m-0" id="Contactaddress">${contactList[i].adress}</p>
+                                <p class=" text-muted font-14 m-0" id="Contactaddress">${contactList[i].adress}</p>
                               </div>
+                              <div class="group-and-emergency d-flex gap-2">
+                                <div class="contactGroup d-flex align-items-center font-11 rounded-3 mt-1 justify-content-center">
+                                  <span class="p-2 text-center rounded-2 d-flex">${contactList[i].contactGroup}</span>
+                                </div>
                               <div class="is-emergency-pill d-flex align-items-center font-11 rounded-3 mt-1 ${emergencyPillClass}">
                                 <span class="d-block p-2 ps-0 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
                                 <span>Emergency</span>
                               </div>
+                              </div>
+
                             </div>
                             <div class="contact-controls py-2 px-3 d-flex justify-content-between font-14 rounded-2">
                               <div class="comunications d-flex gap-2 align-items-center">
