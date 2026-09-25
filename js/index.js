@@ -108,6 +108,8 @@ function displayContactList() {
   var box = "";
 
   for (var i = 0; i < contactList.length; i++) {
+    var favouriteIconClass = contactList[i].isFavorite ? "" : "d-none";
+    var emergencyIconClass = contactList[i].isEmergency ? "" : "d-none";
     var emergencyPillClass = contactList[i].isEmergency ? "" : "d-none";
     var starClass = contactList[i].isFavorite ? "yellow-icon" : "text-muted";
     var heartClass = contactList[i].isEmergency ? "red-icon" : "text-muted";
@@ -118,10 +120,14 @@ function displayContactList() {
                             <div class="contact-info p-3 bg-white pb-2">
                               <div class="contact-heading d-flex gap-3">
                                 <div class="intial-letters-main font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2" id="intialLetters">
-                                 <span class="favourite-small-icon position-absolute p-2"><i class="fa-solid fa-star"></i></span>
+                                <span class="favourite-small-icon position-absolute p-2 ${favouriteIconClass}">
+                                    <i class="fa-solid fa-star"></i>
+                                  </span>
                                   <!-- <img src="${contactList[i].image}" alt=""  class="z-3 w-100 h-100"/> -->
                                  <span class="first-letter">${initials}</span></span>   
-                                  <span class="emergency-small-icon position-absolute p-2"><i class="fa-solid fa-heart-pulse"></i></span>
+                                  <span class="emergency-small-icon position-absolute p-2 ${emergencyIconClass}">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                  </span>
                                 </div>
                                 <div class="name-number">
                                   <h5 class="name text-capitalize m-0 fs-6 fw-semibold mb-2" id="contactName">${contactList[i].name}</h5>
