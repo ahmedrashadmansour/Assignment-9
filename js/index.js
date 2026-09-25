@@ -209,6 +209,13 @@ function editContact(index) {
   contactGroup.value = contactList[index].contactGroup;
   notes.value = contactList[index].notes;
 
+  //check check box in edit menu when u edit contact
+
+  var isFavCheckbox = document.getElementById("addFavouriteCheckbox");
+  var isEmergCheckbox = document.getElementById("addEmergCheckbox");
+  if (isFavCheckbox) isFavCheckbox.checked = contactList[index].isFavorite || false;
+  if (isEmergCheckbox) isEmergCheckbox.checked = contactList[index].isEmergency || false;
+
   // Get the modal id
   var modalElement = document.getElementById("addContactModal");
 
@@ -218,6 +225,9 @@ function editContact(index) {
 }
 
 function updateThisContact() {
+  var isFavCheckbox = document.getElementById("addFavouriteCheckbox");
+  var isEmergCheckbox = document.getElementById("addEmergCheckbox");
+
   var updatedContact = {
     name: fullName.value,
     number: phoneNumber.value,
@@ -225,14 +235,16 @@ function updateThisContact() {
     adress: adress.value,
     contactGroup: contactGroup.value,
     notes: notes.value,
-    isFavorite: contactList[globalIndex].isFavorite,
-    isEmergency: contactList[globalIndex].isEmergency,
+    isFavorite: isFavCheckbox ? isFavCheckbox.checked : false,
+    isEmergency: isEmergCheckbox ? isEmergCheckbox.checked : false,
   };
   contactList[globalIndex] = updatedContact;
 
-  clearAllInputs();
   localStorage.setItem("Contacts", JSON.stringify(contactList));
   displayContactList();
+  displayFavourite();
+  displayEmergency();
+  clearAllInputs();
   showSaveHideUpdateBtn();
 
   // to close button after adding contactts

@@ -377,6 +377,7 @@ input::placeholder {
 .input-icon {
   width: 1.4rem;
   height: 1.4rem;
+  color: red !important;
 }
 
 #addEmergency {
