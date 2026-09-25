@@ -340,10 +340,10 @@ function updateThisContact() {
   };
   contactList[globalIndex] = updatedContact;
 
+  clearAllInputs();
   localStorage.setItem("Contacts", JSON.stringify(contactList));
   displayContactList();
   showSaveHideUpdateBtn();
-  clearAllInputs();
 
   // to close button after adding contactts
   if (document.activeElement) {
@@ -365,4 +365,72 @@ function showUpdateHideSaveBtn() {
 function showSaveHideUpdateBtn() {
   saveBtn.classList.remove("d-none");
   updateBtn.classList.add("d-none");
+}
+
+function searchContact(input) {
+  // var input = document.getElementById("contactSearch");
+  console.log(input.value);
+
+  var box = "";
+
+  for (var i = 0; i < contactList.length; i++) {
+    if (contactList[i].name.toLowerCase().includes(input.value.toLowerCase())) {
+      box += `<div class="col-12 col-md-6">
+                        <div class="inner">
+                          <div class="contact-card my-3 shadow-sm rounded-5 overflow-hidden">
+                            <div class="contact-info p-3 bg-white pb-2">
+                              <div class="contact-heading d-flex gap-3">
+                                <div class="intial-letters font-18 fw-semibold name-gradient p-3 rounded-3 text-white mb-2" id="intialLetters">
+                                  <!-- <img src="${contactList[i].image}" alt=""  class="z-3 w-100 h-100"/> -->
+                                 <span class="first-letter">A<span class="second-letter">R</span></span>   
+                                </div>
+                                <div class="name-number">
+                                  <h5 class="name text-capitalize m-0 fs-6 fw-semibold mb-2" id="contactName">${contactList[i].name}</h5>
+                                  <p class="d-flex gap-2 align-items-center">
+                                    <span class="p-1 txt-blue-with-bg-light rounded-2 font-11"><i class="fa-solid fa-phone"></i></span>
+                                    <span class="number font-14 text-muted" id="contactNumber"> ${contactList[i].number}</span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="email d-flex gap-2 align-items-center mb-2">
+                                <span class="text-purple-with-bg-light font-11 p-2 rounded-2 d-block"
+                                  ><i class="fa-solid fa-envelope"></i
+                                ></span>
+                                <p class="email text-muted font-14 m-0" id="contactEmail" >${contactList[i].email}</p>
+                              </div>
+                              <div class="is-emergency-pill d-flex align-items-center font-11 rounded-3 mt-1">
+                                <span class="d-block p-2 ps-0 rounded-3"><i class="fa-solid fa-heart-pulse"></i></span>
+                                <span>Emergency</span>
+                              </div>
+                            </div>
+                            <div class="contact-controls py-2 px-3 d-flex justify-content-between font-14 rounded-2">
+                              <div class="comunications d-flex gap-2 align-items-center">
+                                <a class="call green-icon font-14 p-2 rounded-2" href="tel:${contactList[i].number}" id="callIcon">
+                                  <span><i class="fa-solid fa-phone"></i></span>
+                                </a>
+                                <a href="mailto:${contactList[i].email}" class="email text-purple-with-bg-light font-14 p-2 rounded-2" id="emailIcon">
+                                  <span><i class="fa-solid fa-envelope"></i></span>
+                                </a>
+                              </div>
+                              <div class="contact-updates d-flex gap-2 align-items-center">
+                                <button id="addFavourite" class="add-favourite yellow-icon font-14 p-2 rounded-2">
+                                  <i class="fa-solid fa-star"></i>
+                                </button>
+                                <button class="add-emergency rounded-2" id="addEmergency">
+                                  <span class="d-block font-14 p-2 rounded-2 red-icon"><i class="fa-solid fa-heart-pulse"></i></span>
+                                </button>
+                                   <!-- delete and update buttons -->
+                                <button onclick="editContact (${i})" class="edit text-muted p-2" id="editContact"><i class="fa-solid fa-pen"></i></button>
+                                <button onclick="deleteThisContact (${i})" class="delete text-muted p-2" id="deleteContact"><i class="fa-solid fa-trash"></i></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>`;
+    }
+  }
+  rowData.innerHTML = box;
+  //adding total contacts
+  addingTotalContact.innerHTML = `Manage and organize your ${contactList.length} contacts`;
+  addTotalContactInHeader.innerHTML = `${contactList.length}`;
 }
