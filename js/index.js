@@ -277,9 +277,9 @@ function displayFavourite() {
                     <p class="number m-0 font-12 text-muted">${contactList[i].number}</p>
                   </div>
                 </div>
-                <span class="call-icon d-block txt-green-color font-12 p-2 rounded-2 bg-light-green"
+                <a href="tel:${contactList[i].number}"class="call-icon d-block txt-green-color font-12 p-2 rounded-2 bg-light-green"
                   ><i class="fa-solid fa-phone"></i
-                ></span>
+                ></a>
               </div>
            </div>`;
     }
@@ -330,7 +330,7 @@ function displayEmergency() {
                             <p class="number m-0 font-12 text-muted">${contactList[i].number}</p>
                           </div>
                         </div>
-                        <span class="call-icon d-block font-12 p-2 rounded-2 txt-red bg-light-red"><i class="fa-solid fa-phone"></i></span>
+                        <a href="tel:${contactList[i].number}" class="call-icon d-block font-12 p-2 rounded-2 txt-red bg-light-red"><i class="fa-solid fa-phone"></i></a>
                       </div>
                     </div>`;
     }
