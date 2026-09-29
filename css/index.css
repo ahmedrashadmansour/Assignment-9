@@ -321,13 +321,6 @@ body {
   background-color: #d0fae5;
 }
 
-.yellow-icon {
-  color: #ffb900 !important;
-  background-color: #fffbeb !important;
-}
-.yellow-icon:hover {
-  background-color: #fef3c6;
-}
 .red-icon {
   color: #ff2056;
   background-color: #fff1f2;
@@ -452,5 +445,28 @@ input::placeholder {
   background-color: #ff8500;
   border-radius: 15px;
   position: relative;
+}
+
+#editContact:hover {
+  background-color: #eef2ff !important;
+  color: #1e6dff !important;
+  border-radius: 5px;
+}
+#deleteContact:hover {
+  background-color: #fff1f2 !important;
+  color: #ec003f !important;
+  border-radius: 5px;
+}
+
+#addFavourite {
+  background-color: inherit !important;
+}
+
+.yellow-icon {
+  color: #ffb900 !important;
+  background-color: inherit !important;
+}
+.yellow-icon:hover {
+  background-color: #fef3c6 !important;
 }
 /* =================== End Main Section ================*/
