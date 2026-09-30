@@ -205,6 +205,8 @@ body {
 .emergency-icon {
   box-shadow: 0px 5px 5px #ffe9c8;
   background: linear-gradient(to bottom right, #fd1b50 50%, #e9001a);
+  padding-block: 10px !important;
+  padding-inline: 13px !important;
 }
 
 .all-category .total,

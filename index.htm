@@ -74,22 +74,48 @@
 
                         <div class="align-items-start mt-4 w-100">
                           <label for="nameInput" class="mb-2">Full Name <span class="required-star">*</span></label>
-                          <input type="text" class="form-control p-2 rounded-2" id="nameInput" placeholder="Enter full name" />
+                          <input
+                            type="text"
+                            class="form-control p-2 rounded-2"
+                            id="nameInput"
+                            placeholder="Enter full name"
+                            oninput="validateForm(this)" />
+                          <div class="alert alert-danger d-none">Contact name must start with Capital Letter</div>
                         </div>
                         <!-- phone -->
                         <div class="align-items-start mt-4 w-100">
                           <label for="phoneInput" class="mb-2">Phone Number <span class="required-star">*</span></label>
-                          <input type="number" class="form-control p-2 rounded-2" id="phoneInput" placeholder="e.g.,01012345678" />
+                          <input
+                            type="number"
+                            class="form-control p-2 rounded-2"
+                            id="phoneInput"
+                            placeholder="e.g.,01012345678"
+                            oninput="validateForm(this)" />
+                          <div class="alert alert-danger d-none">Egyptian number to be inserted</div>
                         </div>
                         <!-- email -->
                         <div class="align-items-start mt-4 w-100">
                           <label for="emailInput" class="mb-2">Email Address</label>
-                          <input type="email" class="form-control p-2 rounded-2" id="emailInput" placeholder="name@emample.com" />
+                          <input
+                            type="email"
+                            class="form-control p-2 rounded-2"
+                            id="emailInput"
+                            placeholder="name@emample.com"
+                            oninput="validateForm(this)" />
+
+                          <div class="alert alert-danger d-none">insert Proper Email address</div>
                         </div>
                         <!-- address -->
                         <div class="align-items-start mt-4 w-100">
                           <label for="addressInput" class="mb-2">Address</label>
-                          <input type="text" class="form-control p-2 rounded-2" id="addressInput" placeholder="Enter adress" />
+                          <input
+                            type="text"
+                            class="form-control p-2 rounded-2"
+                            id="addressInput"
+                            placeholder="Enter adress"
+                            oninput="validateForm(this)" />
+
+                          <div class="alert alert-danger d-none">insert Proper address</div>
                         </div>
                         <!-- group -->
                         <div class="align-items-start mt-4 w-100">
@@ -102,11 +128,19 @@
                             <option value="School">School</option>
                             <option value="Other">Other</option>
                           </select>
+                          <div class="alert alert-danger d-none">choose one of these (Family,Friend,Work,School,Other)</div>
                         </div>
                         <!-- note -->
                         <div class="align-items-start mt-4 w-100">
                           <label for="noteInput" class="mb-2">Notes</label>
-                          <input type="text" class="form-control p-4 rounded-2" id="noteInput" placeholder="Add notes about this contact" />
+                          <input
+                            type="text"
+                            class="form-control p-4 rounded-2"
+                            id="noteInput"
+                            oninput="validateForm(this)"
+                            placeholder="Add notes about this contact" />
+
+                          <div class="alert alert-danger d-none">insert valid notes</div>
                         </div>
                       </div>
                       <div class="fav-emergency pt-3 d-flex gap-5">
@@ -116,7 +150,7 @@
                             type="checkbox"
                             name="addFavourite"
                             id="addFavouriteCheckbox"
-                            oninput="addFavouriteContact()" />
+                            onclick="addFavouriteContact()" />
                           <label for="addFavourite" class="d-flex gap-2 font-14"
                             ><span><i class="fa-solid fa-star addFavourite gold-color"></i></span>Favourite</label
                           >
@@ -127,7 +161,7 @@
                             type="checkbox"
                             name="addEmergency"
                             id="addEmergCheckbox"
-                            oninput="addEmergencyContact()" />
+                            onclick="addEmergencyContact()" />
                           <label for="addEmergency" class="d-flex gap-2 font-14"
                             ><span class="addEmergency input-icon"><i class="fa-solid fa-heart-pulse addEmergency"></i></span
                             >Emergency</label

@@ -24,53 +24,68 @@ var contactList = JSON.parse(localStorage.getItem("Contacts")) || [];
 displayContactList();
 displayFavourite();
 displayEmergency();
+/*nameInput: /^[a-zA-Z0-9]+( [a-zA-Z0-9]+)*$/,
+    phoneInput: /^(?:\+20|0020|0)?1[0125][0-9]{8}$/,
+    emailInput: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
+    groupInput: /^(Family|Friend|Work|School|Other)$/,
+    noteInput: /^[a-zA-Z0-9\u0600-\u06FF\s,.\/#-]{5,100}$/,
+    addressInput: /^[a-zA-Z0-9\u0600-\u06FF\s,.\/#-]{5,100}$/, */
 
 function addNewContact() {
-  var isFavCheckbox = document.getElementById("addFavouriteCheckbox");
-  var isEmergCheckbox = document.getElementById("addEmergCheckbox");
-  var newContact = {
-    // image: contactImage.files[0]
-    //   ? `imgs/${contactImage.files[0].name}`
-    //   : `<span class="first-letter">A<span class="second-letter">R</span></span>`,
-    name: fullName.value,
-    number: phoneNumber.value,
-    email: emailAddress.value,
-    adress: adress.value,
-    contactGroup: contactGroup.value,
-    notes: notes.value,
-    isFavorite: isFavCheckbox ? isFavCheckbox.checked : false,
-    isEmergency: isEmergCheckbox ? isEmergCheckbox.checked : false,
-  };
+  if (
+    validateForm(nameInput) &&
+    validateForm(phoneInput) &&
+    validateForm(emailInput) &&
+    validateForm(groupInput) &&
+    validateForm(noteInput) &&
+    validateForm(addressInput)
+  ) {
+    var isFavCheckbox = document.getElementById("addFavouriteCheckbox");
+    var isEmergCheckbox = document.getElementById("addEmergCheckbox");
+    var newContact = {
+      // image: contactImage.files[0]
+      //   ? `imgs/${contactImage.files[0].name}`
+      //   : `<span class="first-letter">A<span class="second-letter">R</span></span>`,
+      name: fullName.value,
+      number: phoneNumber.value,
+      email: emailAddress.value,
+      adress: adress.value,
+      contactGroup: contactGroup.value,
+      notes: notes.value,
+      isFavorite: isFavCheckbox ? isFavCheckbox.checked : false,
+      isEmergency: isEmergCheckbox ? isEmergCheckbox.checked : false,
+    };
 
-  //adding intaal letters
-  // var separeteNames = [];
-  // var fullContactName = newContact?.name || "";
-  // if (fullContactName.trim() !== "") {
-  //   separeteNames.push(...fullContactName.split(" "));
-  // }
-  // console.log(separeteNames[0]?.[0] || "No Initial");
-  // console.log(separeteNames[1]?.[0] || "No Initial");
-  // fullContactName.push(newContact.name);
-  // var separeteNames = [fullContactName];
+    //adding intaal letters
+    // var separeteNames = [];
+    // var fullContactName = newContact?.name || "";
+    // if (fullContactName.trim() !== "") {
+    //   separeteNames.push(...fullContactName.split(" "));
+    // }
+    // console.log(separeteNames[0]?.[0] || "No Initial");
+    // console.log(separeteNames[1]?.[0] || "No Initial");
+    // fullContactName.push(newContact.name);
+    // var separeteNames = [fullContactName];
 
-  contactList.push(newContact);
-  localStorage.setItem("Contacts", JSON.stringify(contactList));
-  displayContactList();
+    contactList.push(newContact);
+    localStorage.setItem("Contacts", JSON.stringify(contactList));
+    displayContactList();
 
-  displayFavourite();
-  displayEmergency();
-  clearAllInputs();
+    displayFavourite();
+    displayEmergency();
+    clearAllInputs();
 
-  // to close button after adding contactts
-  if (document.activeElement) {
-    document.activeElement.blur();
-  }
+    // to close button after adding contactts
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
 
-  // Hide the Bootstrap modal
-  var modalElement = document.getElementById("addContactModal");
-  var modalInstance = bootstrap.Modal.getInstance(modalElement);
-  if (modalInstance) {
-    modalInstance.hide();
+    // Hide the Bootstrap modal
+    var modalElement = document.getElementById("addContactModal");
+    var modalInstance = bootstrap.Modal.getInstance(modalElement);
+    if (modalInstance) {
+      modalInstance.hide();
+    }
   }
 }
 
@@ -225,38 +240,47 @@ function editContact(index) {
 }
 
 function updateThisContact() {
-  var isFavCheckbox = document.getElementById("addFavouriteCheckbox");
-  var isEmergCheckbox = document.getElementById("addEmergCheckbox");
+  if (
+    validateForm(nameInput) &&
+    validateForm(phoneInput) &&
+    validateForm(emailInput) &&
+    validateForm(groupInput) &&
+    validateForm(noteInput) &&
+    validateForm(addressInput)
+  ) {
+    var isFavCheckbox = document.getElementById("addFavouriteCheckbox");
+    var isEmergCheckbox = document.getElementById("addEmergCheckbox");
 
-  var updatedContact = {
-    name: fullName.value,
-    number: phoneNumber.value,
-    email: emailAddress.value,
-    adress: adress.value,
-    contactGroup: contactGroup.value,
-    notes: notes.value,
-    isFavorite: isFavCheckbox ? isFavCheckbox.checked : false,
-    isEmergency: isEmergCheckbox ? isEmergCheckbox.checked : false,
-  };
-  contactList[globalIndex] = updatedContact;
+    var updatedContact = {
+      name: fullName.value,
+      number: phoneNumber.value,
+      email: emailAddress.value,
+      adress: adress.value,
+      contactGroup: contactGroup.value,
+      notes: notes.value,
+      isFavorite: isFavCheckbox ? isFavCheckbox.checked : false,
+      isEmergency: isEmergCheckbox ? isEmergCheckbox.checked : false,
+    };
+    contactList[globalIndex] = updatedContact;
 
-  localStorage.setItem("Contacts", JSON.stringify(contactList));
-  displayContactList();
-  displayFavourite();
-  displayEmergency();
-  clearAllInputs();
-  showSaveHideUpdateBtn();
+    localStorage.setItem("Contacts", JSON.stringify(contactList));
+    displayContactList();
+    displayFavourite();
+    displayEmergency();
+    clearAllInputs();
+    showSaveHideUpdateBtn();
 
-  // to close button after adding contactts
-  if (document.activeElement) {
-    document.activeElement.blur();
-  }
+    // to close button after adding contactts
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
 
-  // Hide the Bootstrap modal
-  var modalElement = document.getElementById("addContactModal");
-  var modalInstance = bootstrap.Modal.getInstance(modalElement);
-  if (modalInstance) {
-    modalInstance.hide();
+    // Hide the Bootstrap modal
+    var modalElement = document.getElementById("addContactModal");
+    var modalInstance = bootstrap.Modal.getInstance(modalElement);
+    if (modalInstance) {
+      modalInstance.hide();
+    }
   }
 }
 
@@ -267,6 +291,7 @@ function addFavouriteContact(buttonElement, index) {
   // } else {
   //   buttonElement.classList.remove("yellow-icon");
   // }
+  if (!contactList[index]) return;
   contactList[index].isFavorite = !contactList[index].isFavorite;
   localStorage.setItem("Contacts", JSON.stringify(contactList));
   displayContactList();
@@ -319,6 +344,7 @@ function addEmergencyContact(buttonElement, index) {
   // } else {
   //   buttonElement.classList.remove("red-icon");
   // }
+  if (!contactList[index]) return;
   contactList[index].isEmergency = !contactList[index].isEmergency;
   localStorage.setItem("Contacts", JSON.stringify(contactList));
   displayContactList();
@@ -442,4 +468,30 @@ function searchContact(input) {
   //adding total contacts
   addingTotalContact.innerHTML = `Manage and organize your ${contactList.length} contacts`;
   addTotalContactInHeader.innerHTML = `${contactList.length}`;
+}
+
+// Validation (Regex Impelemention)
+
+function validateForm(element) {
+  var regex = {
+    nameInput: /^[a-zA-Z\u0600-\u06FF]+( [a-zA-Z\u0600-\u06FF]+)*$/,
+    phoneInput: /^(?:\+20|0020|0)?1[0125][0-9]{8}$/,
+    emailInput: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
+    groupInput: /^(Family|Friend|Work|School|Other)$/,
+    noteInput: /^[a-zA-Z0-9\u0600-\u06FF\s,.\/#-]{5,100}$/,
+    addressInput: /^[a-zA-Z0-9\u0600-\u06FF\s,.\/#-]{5,100}$/,
+  };
+  // console.log(regex[element.id]);
+
+  if (regex[element.id].test(element.value)) {
+    element.classList.add("is-valid");
+    element.classList.remove("is-invalid");
+    element.nextElementSibling.classList.add("d-none");
+    return true;
+  } else {
+    element.classList.add("is-invalid");
+    element.classList.remove("is-valid");
+    element.nextElementSibling.classList.remove("d-none");
+    return false;
+  }
 }
